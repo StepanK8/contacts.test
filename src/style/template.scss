@@ -1,0 +1,65 @@
+
+$mediaQuery1: 1550px;
+$mediaQuery2: 800px;
+
+
+:root{
+    --darkGray: #1E1E1E;
+    --darkGrayHover: #282828;
+    --Primary-Border: #4D4D4D;
+    --Seondary-BG: #262626;
+    --Primary-Red: #FA7272;
+    --Primary-Red-Hover: #e14343;
+    --Skeleton: linear-gradient(90deg, #3C3C3C 0%, #444 51.04%, #333 100%);
+
+
+    --mainFont: 'ArialNova';
+    --mediaQuery1: 1351px;
+    --heightImageWrap: 440px;
+    
+}
+
+@media screen and (max-width: $mediaQuery1) {
+    *{  
+        --width: 1280px;
+        --maxW: 90vw;
+        --heightImageWrap: 45vw;
+    } 
+}
+@media screen and (max-width: $mediaQuery2) {
+    *{
+        --maxW: 95vw;
+        --heightImageWrap: 45vw;
+        --middle: 4vw;
+    }
+}
+// body{
+//     background: var(--background);
+// }
+
+
+@mixin card{
+    border: 1px solid var(--Primary-Border);
+    border-radius: 12px;
+    background: var(--Seondary-BG);
+}
+
+@mixin button{
+    background: var(--Primary-Red);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    width: 100%;
+    height: 40px;
+    transition: .2s;
+    &:hover{
+        background: var(--Primary-Red-Hover);
+        cursor: pointer;
+    }
+}
+
+
+

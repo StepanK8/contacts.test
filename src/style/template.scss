@@ -23,9 +23,19 @@ $mediaQuery2: 800px;
 
 
     --mainFont: 'ArialNova';
-    --mediaQuery1: 1351px;
     --heightImageWrap: 440px;
     
+    //width
+    --width: 990px;
+    --widthModal: 704px;
+
+    //text sizes
+    --title-text-size: 32px;
+
+    --l-text-size: 18px;
+    --m-text-size: 14px;
+    --s-text-size: 12px;
+    --xs-text-size: 10px;
 }
 
 @media screen and (max-width: $mediaQuery1) {
@@ -46,6 +56,14 @@ $mediaQuery2: 800px;
 //     background: var(--background);
 // }
 
+@mixin baseText{
+    font-family: "Nova";
+    font-size: var(--m-text-size);
+}
+
+@mixin headerText{
+    font-size: var(--xs-text-size);
+}
 
 @mixin card{
     border: 1px solid var(--Primary-Border);

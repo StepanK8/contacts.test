@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import MainView from '@/views/MainView.vue'
 </script>
-  <MainView/>
 <template>
+  <MainView/>
 </template>
 
 <style>
 @import '@/style/reset.scss';
-
+@import '@/style/main.scss';
 </style>

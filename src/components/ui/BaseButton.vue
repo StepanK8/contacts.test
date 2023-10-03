@@ -28,10 +28,18 @@ const props = defineProps(['style'])
         padding: 0 16px;
         width: auto;
         text-transform: uppercase;
+        color: var(--deepGray);
+        transition: .1s;
+        cursor: pointer;
         & > img{
             width: 16px;
             height: 16px;
-            color: var(--deepGray);
+        }
+        &:hover{
+            background: var(--yellowHover);
+        }
+        &:active{
+            background: var(--yellowActive);
         }
     }
 

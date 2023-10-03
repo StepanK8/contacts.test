@@ -13,7 +13,8 @@
     "@vueuse/core": "^10.4.1",
     "pinia": "^2.1.6",
     "pinia-plugin-persistedstate": "^3.2.0",
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "vue-the-mask": "^0.11.1"
   },
   "devDependencies": {
     "@tsconfig/node18": "^18.2.2",

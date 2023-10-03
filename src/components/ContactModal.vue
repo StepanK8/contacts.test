@@ -2,7 +2,7 @@
 </script>
 <template>
     <div class="modal">
-        <h2 class="modal__title">Новый контакт</h2>
+        <h2 class="modal__title">Новый контакт </h2>
     </div>
 </template>
 <style lang="scss">

@@ -72,7 +72,7 @@
   .input {
     user-select: text;
     font-family: 'Halvar';
-    padding: 12px 4px 12px 8px;
+    padding: 0 4px 0 8px;
     font-size: inherit;
     width: 100%;
     height: 40px;
@@ -138,7 +138,6 @@
     }
     &--noLabel{
       .input{
-        padding-top: 4px;
       }
     }
     .input:focus,

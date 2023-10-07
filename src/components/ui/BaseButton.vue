@@ -21,7 +21,7 @@ const props = defineProps(['style'])
         justify-content: center;
         align-items: center;
         gap: 4px;
-        font-size: var(--m-text-size);
+        font-size: var(--s-text-size);
         background: var(--yellow);
         border-radius: 4px;
         font-weight: 700;
@@ -47,6 +47,9 @@ const props = defineProps(['style'])
         background: transparent;
         color: var(--mainColor);
         text-transform: none;
+        &:hover{
+            background: var(--stroke);
+        }
     }
 
     .button--border{
@@ -55,5 +58,8 @@ const props = defineProps(['style'])
         text-transform: none;
         border: 1px solid var(--mainColor);
         border-radius: 100px;
+        &:hover{
+            background: var(--stroke);
+        }
     }
 </style>

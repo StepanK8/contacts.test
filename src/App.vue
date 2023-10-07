@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import MainView from '@/views/MainView.vue'
+import NotificationApp from '@/components/NotificationApp.vue'
+import HeaderApp from '@/components/HeaderApp.vue'
 </script>
 <template>
-  <MainView/>
+  <HeaderApp/>
+  <router-view></router-view>
+  <NotificationApp/>
 </template>
 
 <style>

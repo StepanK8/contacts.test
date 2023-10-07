@@ -30,7 +30,7 @@
     </div>
 </template>
 <script>
-export default{
+export default {
     data(){
         return{
             isOpen: false,
@@ -38,7 +38,6 @@ export default{
             optionsListToShow: [],
             actualOption: null,
             inputToShow: "Не выбрано",
-            
         }
     },
     computed:{
@@ -245,7 +244,7 @@ export default{
                 max-width: 70%;
                 height: 100%;
                 flex-grow: 1;
-                padding-left: 15px;
+                padding-left: 2px;
                 margin-right: 10px;
                 display: flex;
                 justify-content: flex-start;
@@ -256,6 +255,7 @@ export default{
                 background: white;
                 &-input{
                     @include baseText;
+                    text-transform: uppercase;
                     // background: black;
                     &--hideCaret{
                         caret-color: transparent; 
@@ -349,8 +349,9 @@ export default{
                     display: flex;
                     justify-content: flex-start;
                     align-items: center;
-                    padding-left: 35px;
+                    padding-left: 12px;
                     @include baseText;
+                    text-transform: uppercase;
                     
                     &:hover{
                         background-color: var(--lightBlue);

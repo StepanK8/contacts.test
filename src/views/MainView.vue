@@ -1,22 +1,34 @@
 <script setup lang="ts">
-import HeaderApp from '@/components/HeaderApp.vue'
+
 import ListApp from '@/components/ListApp.vue'
-import ContactModal from '@/components/ContactModal.vue'
+
 import BaseButton from '@/components/ui/BaseButton.vue'
 import BaseInput from '@/components/ui/BaseInput.vue'
 import DropDown from '@/components/ui/DropDown.vue'
 </script>
 <template>
     <div class="main">
-        <HeaderApp/>
+        
         <div class="main__top-row">
-            <div class="main__top-row_wrap"></div>
-            <BaseInput :label="'sdfgsd'" :warning="true"/>
+            <div class="main__top-row_wrap">
+                <div class="main__top-row_select-wrap">
+                    <DropDown
+                    :optionsList="[{name: 'все', id: 1}, {name: 'родственники', id: 2}, {name: 'коллеги', id: 3}]"
+                    ></DropDown>
+                </div>
+                <div class="main__top-row_button-wrap">
+                    <BaseButton 
+                        :style="'border'"
+                        @click="$router.push({name: 'edit'})"
+                    >
+                        <img src="@/assets/icons/plus.png" alt="">
+                        ДОБАВИТЬ КОНТАКТ
+                    </BaseButton>
+                </div>
+            </div>
+            <!-- <BaseInput :label="'sdfgsd'" :warning="true"/>
             <BaseButton><img src="@/assets/icons/save.png" alt="">Сохранить</BaseButton>
-            <BaseButton :style="'border'"><img src="@/assets/icons/plus.png" alt="">12a3 </BaseButton>
-            <DropDown
-                :optionsList="[{name: 'foo', id: 1}, {name: 'bar', id: 2}, {name: 'boo', id: 3}]"
-            ></DropDown>
+            <BaseButton :style="'border'"><img src="@/assets/icons/plus.png" alt="">12a3 </BaseButton> -->
         </div>
         <ListApp/>
         <ContactModal/>
@@ -33,6 +45,15 @@ import DropDown from '@/components/ui/DropDown.vue'
         justify-content: center;
         &_wrap{
             width: var(--width);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &_select-wrap{
+            width: 235px;
+        }
+        &_button-wrap{
+            width: 185px;
         }
     }
 }

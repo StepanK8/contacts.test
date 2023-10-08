@@ -5,6 +5,13 @@ import ListApp from '@/components/ListApp.vue'
 import BaseButton from '@/components/ui/BaseButton.vue'
 import BaseInput from '@/components/ui/BaseInput.vue'
 import DropDown from '@/components/ui/DropDown.vue'
+
+import {useRouter} from 'vue-router'
+
+import {ref} from 'vue'
+const router = useRouter()
+const selectedCategoryId = ref(0)
+
 </script>
 <template>
     <div class="main">
@@ -13,13 +20,14 @@ import DropDown from '@/components/ui/DropDown.vue'
             <div class="main__top-row_wrap">
                 <div class="main__top-row_select-wrap">
                     <DropDown
-                    :optionsList="[{name: 'все', id: 1}, {name: 'родственники', id: 2}, {name: 'коллеги', id: 3}]"
+                        :optionsList="[{name: 'все', id: 0}, {name: 'родственники', id: 1}, {name: 'коллеги', id: 2}]"
+                        v-model="selectedCategoryId"
                     ></DropDown>
                 </div>
                 <div class="main__top-row_button-wrap">
                     <BaseButton 
                         :style="'border'"
-                        @click="$router.push({name: 'edit'})"
+                        @click="router.push({name: 'create'})"
                     >
                         <img src="@/assets/icons/plus.png" alt="">
                         ДОБАВИТЬ КОНТАКТ
@@ -30,7 +38,7 @@ import DropDown from '@/components/ui/DropDown.vue'
             <BaseButton><img src="@/assets/icons/save.png" alt="">Сохранить</BaseButton>
             <BaseButton :style="'border'"><img src="@/assets/icons/plus.png" alt="">12a3 </BaseButton> -->
         </div>
-        <ListApp/>
+        <ListApp :selectedCategoryId="selectedCategoryId"/>
         <ContactModal/>
     </div>
 </template>

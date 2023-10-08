@@ -89,12 +89,14 @@ export default {
            }
         })
         this.optionsListToShow = [...this.optionsListNew]
-        this.actualOption = this.optionsListNew[0]
+        // this.actualOption = this.optionsListNew[0]
+        
         ////console.log(this.optionsListNew);
         // this.$emit('update:modelValue', [0])  
     },
     mounted(){
         this.$refs.fieldInput.style.maxWidth = `${this.$refs.fieldInput.getBoundingClientRect().width}px`
+        this.chooseOption(this.modelValue)
     },
     methods:{
         openMenu(){
@@ -108,7 +110,7 @@ export default {
             setTimeout(() => {
                 this.isOpen = false
                 this.$refs.input.blur()
-                this.inputToShow = this.actualOption.name
+                this.inputToShow = this.actualOption?.name
                 console.log('modelValue', this.modelValue);
                 if(this.modelValue == null){
                     this.$emit('update:modelValue', 0)
@@ -125,7 +127,7 @@ export default {
                 console.log(this.optionsListNew);
                 this.actualOption = this.optionsListNew.find(el => el.id == idx) 
                 console.log("@@", this.actualOption)
-                this.inputToShow = this.actualOption.name
+                this.inputToShow = this.actualOption?.name
                 console.log([idx], this.optionsList);
                 this.$emit('update:modelValue', idx)
                 this.closeMenu()
@@ -151,7 +153,14 @@ export default {
     watch:{
         triggerClear(value){
             this.inputToShow = "Не выбрано"
-        }
+        },
+        // modelValue: {
+        //     handler(val){
+        //         console.log(this.modelValue);
+        //         this.chooseOption(this.modelValue)
+        //     },
+        //     immediate: true,
+        // },
     }
 }
 </script>
@@ -212,6 +221,7 @@ export default {
                 border: 1px solid var(--gold);
             }
         }
+        
         &__title{
             color: #81858D;
             margin-bottom: 5px;
@@ -229,6 +239,9 @@ export default {
             cursor: pointer;
             background: white;
             border: 1px solid var(--strokeGray);
+            &:hover{
+        border: 1px solid var(--mainColor);
+        }
             &--open{
                 // border-radius: 6px 6px 0 0;
                 .DropDown__field_selectWrap{
@@ -365,12 +378,12 @@ export default {
         }
     }
     @media screen and (max-width: $mediaQuery2) {
-        $mobileTextSize: 4vw;
+        // $mobileTextSize: 4vw;
         .DropDown__field_input-input{
-            font-size: $mobileTextSize;
+            // font-size: $mobileTextSize;
         }
         .DropDown__field_selectWrap-option{
-            font-size: $mobileTextSize;
+            // font-size: $mobileTextSize;
         }
     }
 </style>

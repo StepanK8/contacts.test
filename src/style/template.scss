@@ -1,7 +1,7 @@
 
-$mediaQuery1: 1550px;
-$mediaQuery2: 800px;
-
+$mediaQuery1: 1000px;
+$mediaQuery2: 576px;
+$mediaQuery3: 376px;
 
 :root{
     --deepGray: #282828;
@@ -44,16 +44,16 @@ $mediaQuery2: 800px;
 
 @media screen and (max-width: $mediaQuery1) {
     *{  
-        --width: 1280px;
+        --width: calc( 100vw - 64px);
         --maxW: 90vw;
         --heightImageWrap: 45vw;
     } 
 }
 @media screen and (max-width: $mediaQuery2) {
     *{
+        --width: calc( 100vw - 24px);
         --maxW: 95vw;
         --heightImageWrap: 45vw;
-        --middle: 4vw;
     }
 }
 // body{

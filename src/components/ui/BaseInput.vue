@@ -89,6 +89,12 @@
     &::placeholder{
       color: #A9A9A9;
     }
+    &:hover{
+      border: 1px solid var(--mainColor);
+    }
+    &:focus{
+      border: 1px solid var(--mainColor);
+    }
     &-warning{
       position: absolute;
       right: 0;
@@ -172,9 +178,9 @@
     }
   }
   @media screen and (max-width: $mediaQuery2) {
-    $mobileTextSize: 4vw;
+    // $mobileTextSize: 4vw;
     .input{
-      font-size: $mobileTextSize;
+      // font-size: $mobileTextSize;
       
     }
   }

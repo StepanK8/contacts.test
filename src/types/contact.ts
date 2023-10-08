@@ -1,8 +1,9 @@
-export type Contact {
+export interface Contact {
     id: number,
     name: string,
-    phone: number,
+    phone: string,
     mail: string,
-    created: number,
+    created: number | null,
+    categoryId: number | null,
 }
 

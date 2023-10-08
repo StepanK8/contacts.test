@@ -1,17 +1,29 @@
 <script setup lang="ts">
-const props = defineProps(['style'])
+const props = defineProps({
+    style: String, 
+    icon: String, 
+    isLoading: {
+        type: Boolean,
+        default: false,
+    },
+})
 </script>
 
 <template>
     <div 
         class="button" 
         :class="{
-            'button--transparent': props.style == 'transparent',
-            'button--border': props.style == 'border',
+            'button--transparent': style == 'transparent',
+            'button--border': style == 'border',
         }"
 
     >
+        <img v-if="isLoading" class="button__loader"  src="@/assets/icons/loader.png" alt="">
+        <template v-else>
+            <img v-if="icon == 'save'" src="@/assets/icons/save.png" alt="">
+        </template>
         <slot></slot>
+
     </div>
 </template>
 <style lang="scss">
@@ -41,12 +53,16 @@ const props = defineProps(['style'])
         &:active{
             background: var(--yellowActive);
         }
+        &__loader{
+            animation: spin 1.3s linear infinite;
+        }
     }
 
     .button--transparent{
         background: transparent;
         color: var(--mainColor);
         text-transform: none;
+        font-weight: 400;
         &:hover{
             background: var(--stroke);
         }
@@ -60,6 +76,15 @@ const props = defineProps(['style'])
         border-radius: 100px;
         &:hover{
             background: var(--stroke);
+        }
+    }
+
+    @keyframes spin {
+        from{
+            transform: rotate(0);
+        }
+        to{
+            transform: rotate(360deg);
         }
     }
 </style>

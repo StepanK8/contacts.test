@@ -18,10 +18,10 @@ const props = defineProps({
         }"
 
     >
-        <img v-if="isLoading" class="button__loader"  src="@/assets/icons/loader.png" alt="">
-        <template v-else>
+        <img v-show="isLoading" class="button__loader"  src="@/assets/icons/loader.png" alt="">
+        <div v-show="!isLoading">
             <img v-if="icon == 'save'" src="@/assets/icons/save.png" alt="">
-        </template>
+        </div>
         <slot></slot>
 
     </div>
@@ -43,7 +43,7 @@ const props = defineProps({
         color: var(--deepGray);
         transition: .1s;
         cursor: pointer;
-        & > img{
+        &  img{
             width: 16px;
             height: 16px;
         }

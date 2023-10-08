@@ -163,4 +163,14 @@ const router = useRouter()
             }
         }
     }
+
+    @media screen and (max-width: $mediaQuery3) {
+        .list{
+            &__contact{
+                &_avatar{
+                    display: none;
+                }
+            }
+        }
+    }
 </style>

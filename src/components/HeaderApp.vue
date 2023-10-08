@@ -120,4 +120,15 @@ watch(route, (val) => {
             }
         }
     }
+    @media screen and (max-width: $mediaQuery3) {
+        .header{
+            &__main{
+                &_img{
+                   width: 32px;
+                   height: 32px;
+                   object-fit: contain; 
+                }
+            }
+        }
+    }
 </style>

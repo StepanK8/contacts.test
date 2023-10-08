@@ -30,7 +30,7 @@ const selectedCategoryId = ref(0)
                         @click="router.push({name: 'create'})"
                     >
                         <img src="@/assets/icons/plus.png" alt="">
-                        ДОБАВИТЬ КОНТАКТ
+                        ДОБАВИТЬ <span class="main__top-row_button-wrap--descktop">КОНТАКТ</span>
                     </BaseButton>
                 </div>
             </div>
@@ -62,6 +62,21 @@ const selectedCategoryId = ref(0)
         }
         &_button-wrap{
             width: 185px;
+            
+        }
+    }
+}
+@media screen and (max-width: $mediaQuery3) {
+    .main{
+        &__top-row{
+            &_wrap{
+                gap: 10px;
+            }
+            &_button-wrap{
+                &--descktop{
+                    display: none;
+                }
+            }
         }
     }
 }

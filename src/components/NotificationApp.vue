@@ -46,4 +46,17 @@ const isOpen = ref(false)
             @include baseText;
         }
     }
+    @media screen and (max-width: $mediaQuery3) {
+        .notif{
+            padding: 12px 16px;
+            border-radius: 100px;
+            background: var(--darkGray);
+            top: 64px;
+            bottom: auto;
+            left: 50vw;
+            transform: translate(-50%);
+            color: white;
+            box-shadow: 0px 0px 20px 0px rgba(176, 197, 222, 0.50);
+        }
+    }
 </style>

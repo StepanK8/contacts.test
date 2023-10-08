@@ -242,6 +242,13 @@ function deleteContact(){
         &__bottom-panel{
             padding-left: 0;
         }
+        &__row{
+            &_input{
+                &-wrap{
+                    width: 100px;
+                }
+            }
+        }
     }
 }
 </style>

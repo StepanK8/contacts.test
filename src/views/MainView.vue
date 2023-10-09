@@ -7,11 +7,15 @@ import BaseInput from '@/components/ui/BaseInput.vue'
 import DropDown from '@/components/ui/DropDown.vue'
 
 import {useRouter} from 'vue-router'
-
+import { useCategoriesStore} from '@/stores/categoriesStore'
 import {ref} from 'vue'
+
+const categoriesStore = useCategoriesStore()
 const router = useRouter()
 const selectedCategoryId = ref(0)
 
+
+const optionsList = [{name: 'все', id: 0}, ...categoriesStore.categories]
 </script>
 <template>
     <div class="main">
@@ -20,7 +24,7 @@ const selectedCategoryId = ref(0)
             <div class="main__top-row_wrap">
                 <div class="main__top-row_select-wrap">
                     <DropDown
-                        :optionsList="[{name: 'все', id: 0}, {name: 'родственники', id: 1}, {name: 'коллеги', id: 2}]"
+                        :optionsList="optionsList"
                         v-model="selectedCategoryId"
                     ></DropDown>
                 </div>

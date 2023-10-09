@@ -34,6 +34,7 @@ const isOpen = ref(false)
         gap: 6px;
         opacity: 0;
         transition: opacity 1s;
+        pointer-events: none;
         &--open{
             opacity: 1;
         }

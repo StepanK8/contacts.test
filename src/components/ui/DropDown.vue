@@ -377,13 +377,7 @@ export default {
             }
         }
     }
-    @media screen and (max-width: $mediaQuery2) {
-        // $mobileTextSize: 4vw;
-        .DropDown__field_input-input{
-            // font-size: $mobileTextSize;
-        }
-        .DropDown__field_selectWrap-option{
-            // font-size: $mobileTextSize;
-        }
+    @media screen and (max-width: $mediaQuery3) {
+        
     }
 </style>
